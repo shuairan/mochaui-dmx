@@ -1,0 +1,47 @@
+#netioList table {
+    width: 100%;
+    border:1px solid #E0E0E0;
+    border-collapse:separate;
+    border-spacing:1px;
+    margin:0 0 3px;
+    padding:0;
+}
+
+#netioList th td
+{
+    font-weight:bold;
+}
+
+#netioList td
+{
+    font-family:sans-serif;
+    font-size:12px;
+    font-size-adjust:none;
+    font-style:normal;
+    font-variant:normal;
+    font-weight:normal;
+    line-height:normal;
+    width: 33%;
+}
+
+/*
+#netioList .table-tr-selected
+{
+    background: #4169E1;
+}
+*/
+#netioList .input
+{
+    width: 98%
+}
+
+#netio_contentWrapper #editorDIV
+{
+    /*visibility: hidden;*/
+}
+
+.netioButtons
+{
+    padding: 5px 12px;
+    text-align: right;
+}

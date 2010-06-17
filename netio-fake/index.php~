@@ -1,0 +1,6 @@
+<?
+$ecmd = "test";
+
+echo "NETIO FAKER";
+echo " " . $ecmd;
+?>

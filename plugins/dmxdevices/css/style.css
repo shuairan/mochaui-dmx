@@ -1,0 +1,137 @@
+/* Folder Tree */
+
+.tree {
+	font-size: 11px;
+	line-height: 15px;
+	margin: 0 0 10px 0;
+}
+
+.tree ul {
+	margin: 0;
+}
+
+.tree li {
+	list-style-type: none;
+	white-space: nowrap;
+}	
+
+.tree li img {
+	vertical-align: middle;
+	width: 18px;
+	height: 18px;
+	overflow: hidden;
+}
+
+.tree li span {
+	padding-left: 2px;
+}
+
+#dmxForm .option_red {
+    background-color: red;
+}
+
+#dmxForm .option_green {
+    background-color: green;
+}
+
+#dmxForm .option_blue {
+    background-color: blue;
+}
+
+#dmxForm .option_strobo {
+    text-decoration:blink;
+}
+
+#dmxForm .formLabel {
+	float: left;	
+	text-align: right;
+	width: 100px;
+	margin: 4px 0 4px 0;
+	font-weight: bold;
+}
+
+#dmxForm .label {
+	font-size: 11px;
+	font-weight: bold;
+	padding-bottom: 2px;	
+}
+	
+#dmxForm .formField {
+	float: right;
+	padding: 0 0 0 0;
+	width: 220px;
+}
+
+#dmxForm .formButtons {
+    width: 100%;
+    text-align: right;
+    margin: 10px 0 8px 0;
+}
+
+#dmxForm select {
+	height: 24px;
+    width: 70px;
+	margin: 1px;
+	padding: 3px 1px;
+	background: #f1f1f1 url(../images/bg-panel-header.gif) left bottom repeat-x;
+	font-size: 12px;
+	font-weight: bold;
+	cursor: pointer;
+	vertical-align: middle;
+	border: 1px solid #808080;
+	-moz-border-radius: 3px;
+}
+
+#dmxForm #dmxId {
+    border-style:dashed;
+    text-align: center;
+}
+
+#dmxForm .formSlider {
+    width: 120px;
+    height: 30px;
+    padding: 5px 10px;
+    margin: 0px 0px 5px;
+    background-color: red;
+}
+
+#dmxForm div.dipSlider {
+    float: left;
+	width: 7px;
+	height: 25px;
+	background: #000;
+    margin: 2px;
+}
+#dmxForm div.dipSlider div.knob {
+	background: #FFF;
+	width: 7px;
+	height: 7px;
+}
+
+#dmxForm #dipLabel {
+    float: left;
+    width: 20px;
+    height: 10px;
+    font-size: 8pt;
+    color: #FFF;
+    margin: 15px 0px 0px 0px;
+    font-weight: bold;
+}
+
+
+
+div.dmxSlider {
+    float: left;
+	width: 50px;
+	height: 200px;
+    border: 1px solid #000000;
+	background-image: url(../img/sliderbg.png);
+    margin: 10px;
+}
+div.dmxSlider div.knob {
+	background: #808080;
+    border: 4px outset #BFBFBF;
+	width: 32px;
+	height: 5px;
+    margin: 0 5px 0;
+}

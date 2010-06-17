@@ -1,0 +1,26 @@
+Todo:
+
+NetIO: Namen sind nicht unique (FormValidator adden)
+NetIO: bei load config einer netio id wenn diese netio id schon vorhanden -> überschreiben, daten der neuen behalten, oder abfrage?
+
+DMXDevice: Spinner beim adden von Selectboxen
+
+
+EditTable: Eigene Klasse + Optimierungen für OO (wiederverwendbarkeit)
+
+NetIO/DMXDevice: Superklasse "Device" und "Devices"???
+
+Cookies: optimieren
+
+grep -Hirn "todo" .
+
+
+MochaUI:
+HTMLtable.select:
+    useKeyboard -> only if focused...
+
+
+
+Done:
+NetIO: IDs sind nicht auffeinanderfolgend
+NetIO: IDs sind nicht immer unique (Wenn mehrere NetIOs geadded wurden, und welche mit niedriger ID wieder gelöscht

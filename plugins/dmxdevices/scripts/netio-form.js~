@@ -1,0 +1,33 @@
+/*
+
+Script: netioform.js
+	Create a NetIO form
+	
+Copyright:
+	Copyright (c) 2010 Sascha Riedinger, <http://problemloeser.org/>.	
+
+License:
+	MIT-style license.
+	
+Requires:
+	Core.js, Window.js, NetIO.js
+*/
+
+NetioForm = new Class({
+    options: {
+		id: null,
+		name: 'NetIO',
+		url: 'http://',
+	},
+	initialize: function(options){
+		this.setOptions(options);
+		this.options.id = 'netio' + (++NetIO.count);
+		this.options.title = $('netioTitle').value;
+		this.options.url = $('netioURL').value;
+        
+		new NetIO(this.options);
+	}
+});
+NetioForm.implement(new Options);
+});
+

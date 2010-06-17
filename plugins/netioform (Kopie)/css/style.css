@@ -1,0 +1,50 @@
+#netioList {
+    width: 100%;
+	font-size: 12px;
+	text-align: left;
+	border-collapse: collapse;
+}
+
+#netioList th
+{
+    padding: 8px 2px;
+	font-size: 14px;
+	font-weight: normal;
+	padding: 10px 8px;
+    border-bottom: 2px solid #6678b1;
+	border-right: 30px solid #fff;
+	border-left: 30px solid #fff;
+	color: #039;
+}
+#netioList td
+{
+    padding: 12px 2px 0px 2px;
+	border-right: 30px solid #fff;
+	border-left: 30px solid #fff;
+	color: #669;
+}
+
+#netioList .table-tr-odd
+{
+	background: #e8edff;
+}
+
+#netioList .table-tr-hovered
+{
+    background: #CCCCCC; 
+}
+
+#netioList .table-tr-odd .table-tr-hovered
+{
+	background: #B9BECC;
+}
+
+#netioList .table-tr-selected
+{
+    background: #A9FFB2;
+}
+
+.netioButtons
+{
+    padding:10px 12px;
+}

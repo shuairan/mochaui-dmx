@@ -1,0 +1,202 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+       "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<title>Webcam / DMX Lampen</title>
+<style type="text/css">
+
+	body{
+		height:100%;
+		width:100%;
+		margin:10px;
+		padding-left:0px;
+		text-align:left;
+	}
+	
+	.form_widget_amount_slider{
+		border-top:1px solid #9d9c99;
+		border-left:1px solid #9d9c99;
+		border-bottom:1px solid #eee;
+		border-right:1px solid #eee;
+		background-color:#f0ede0;
+		height:3px;
+		position:absolute;
+		bottom:0px;
+	}
+    
+    #response{
+        height:240;
+        width:60%;
+        float:right;
+        overflow: auto
+    }
+
+	</style>
+    <script src="jquery-1.4.2.min.js"></script>
+	<script src="color_functions.js"></script>
+	<script src="dhtmlgoodies_slider.js"></script>
+    <script type="text/javascript" src="jscolor/jscolor.js"></script>
+    <script type="text/javascript">
+    
+    function onchangeHandler(n) {
+        if (document.getElementById("livemode").checked == true) {
+            send(n);
+        }
+    }
+    
+    function init() {
+        document.getElementById('lampe1').onchange=function() {onchangeHandler(1)};
+        document.getElementById('lampe2').onchange=function() {onchangeHandler(2)};
+    }
+
+    function slideToZero(slider) {
+        textfield = document.getElementById("textfield" + slider);
+        textfield.value = "0";
+        textfield.onchange()
+    }
+    
+    function send(n) {
+        color = document.getElementById('lampe'+n).color
+        red = color.rgb[0]*255
+        green = color.rgb[1]*255
+        blue = color.rgb[2]*255
+        strobo = document.getElementById("textfield"+n).value
+        
+        if (n==1) startchan=6;
+        else if (n==2) startchan=0;
+        
+        ecmd = "ecmd?dmx set6chan "+startchan+" "+red+" "+green+" "+blue+" 0 "+strobo+" 0 ";
+        url = "http://fladdie.gotdns.org:4200/"+ecmd
+        
+        load(url)
+    }
+    
+    function sendAll() {
+        send(1);
+        send(2);
+    }
+
+function load(url)
+{
+    $.ajax({
+        type: "GET",
+        url: url,
+        dataType: "html",
+        success: function(msg){
+            $('#response').append(url + " <br /> " + msg);
+            alert(html);
+        }
+    });
+}
+    </script>
+</head>
+
+<body onload="init()">
+
+<table>
+    <tr>
+        <td><fieldset>
+            <legend>Lampe links</legend>
+            <table>
+                <tr>
+                    <td><label for="lampe1">Farbe:</label></td>
+                    <td colspan="2"><input id="lampe1" class="color"/></td>
+                </tr>
+                <tr>
+                    <td><label for="slider_target1">Strobo:</label></td>
+                    <td id="slider_target1"></td>
+                    <td><input type="text" name="textfield1" id="textfield1" size="3" value="0">
+                        <a href="#" onclick="slideToZero(1)"><i>off</i></a></td>
+                </tr>
+                <tr><td colspan="3"><button onclick="send(1)">Senden</button></td></tr>
+            </table>
+        </fieldset>
+        </td>
+        <td>
+        <fieldset>
+            <legend>Lampe rechts</legend>
+              <table>
+                <tr>
+                    <td><label for="lampe2">Farbe:</label></td>
+                    <td colspan="2"><input id="lampe2" class="color"/></td>
+                </tr>
+                <tr>
+                    <td><label for="slider_target2">Strobo:</label></td>
+                    <td id="slider_target2"></td>
+                    <td><input type="text" name="textfield2" id="textfield2" size="3" value="0">
+                        <a href="#" onclick="slideToZero(2)"><i>off</i></a></td>
+                </tr>
+                <tr><td colspan="3"><button onclick="send(2)">Senden</button></td></tr>
+            </table>
+        </fieldset>
+        </td>
+        <td>
+        <fieldset>
+            <legend>Sonstiges</legend>
+              <table>
+                <tr>
+                    <td><label for="livemode">OnChange-Live-Modus:</label></td>
+                    <td colspan="2"><input type="checkbox" id="livemode"/></td>
+                </tr>
+                <tr><td colspan="3"></td></tr>
+            </table>
+        </fieldset>
+        </td>
+    </tr>
+    <tr><td align="center" colspan="3"><button onclick="sendAll()">Beide Senden</button></td></tr>
+</table>
+
+<script type="text/javascript">
+form_widget_amount_slider('slider_target1',document.getElementById("textfield1"),200,0,255,false);
+form_widget_amount_slider('slider_target2',document.getElementById("textfield2"),200,0,255,false);
+</script> 
+
+<div id="response" ></div>
+
+<!-- ### Javascript etc für den Video Stream: -->
+
+<img src="http://fladdie.gotdns.org:4040/cam_1.cgi" class="webcam" id="webcam1" onmousedown="PTZMouseDown1(event)" width="320" height="240" alt="Live Stream" />
+<script type="text/javascript">
+<!--
+currentCamera1= 1;
+function PTZMouseDown1(e)
+{
+        var IE = document.all?true:false;
+        var x,y;
+        var myx,myy;
+        var myifr = document.getElementById("_iframe-ptz");
+        tp = getElPos1();
+        myx = tp[0];
+        myy = tp[1];
+        if(IE){
+        x = event.clientX - myx + document.body.scrollLeft;
+        y = event.clientY - myy + document.body.scrollTop;
+        } else {
+        x = e.pageX - myx;
+        y = e.pageY - myy;
+        }
+        //alert(x + " :: " + y);
+        if (width_array[currentCamera1] > 0) x = Math.round((x * 400) / width_array[currentCamera1]);
+        if (height_array[currentCamera1] > 0) y = Math.round((y * 300) / height_array[currentCamera1]);
+        //alert(x + " :: " + y);
+        if (myifr != null) myifr.src = "http://fladdie.gotdns.org:4040/ptz?src=" + currentCamera1 + "&moveto_x=" + x + "&moveto_y=" + y +"";
+        return true;
+}
+function getElPos1()
+{
+            el = document.images.webcam1;
+            x = el.offsetLeft;
+            y = el.offsetTop;
+            elp = el.offsetParent;
+            while(elp!=null)
+              { x+=elp.offsetLeft;
+                y+=elp.offsetTop;
+                elp=elp.offsetParent;
+              }
+            return new Array(x,y);
+}
+//-->
+</script>
+
+</body>
+</html>

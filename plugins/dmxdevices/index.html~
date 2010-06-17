@@ -1,0 +1,11 @@
+<div id="deviceIndex">Links DMX Device auswählen oder hier ein neues DMX Device anlegen<br/>
+ToDo:
+<ul>
+    <li>DMX Device per Drag&Drop im Baum verschiebbar machen)</li>
+    <li>Live Modus (Auto Update wenn Netio geadded/gelöscht wird)</li>
+    <li></li>
+</ul>
+</div>
+<div class="deviceButtons">
+    <input type="button" class="button" id="deviceAdd" value="Add"/>
+</div>

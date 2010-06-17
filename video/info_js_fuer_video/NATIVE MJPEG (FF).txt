@@ -1,0 +1,42 @@
+<img src="http://192.168.20.135:4040/cam_1.cgi" class="webcam" id="webcam1" onmousedown="PTZMouseDown1(event)" width="320" height="240" alt="Live Stream" />
+<script type="text/javascript">
+<!--
+currentCamera1= 1;
+function PTZMouseDown1(e)
+{
+        var IE = document.all?true:false;
+        var x,y;
+        var myx,myy;
+        var myifr = document.getElementById("_iframe-ptz");
+        tp = getElPos1();
+        myx = tp[0];
+        myy = tp[1];
+        if(IE){
+        x = event.clientX - myx + document.body.scrollLeft;
+        y = event.clientY - myy + document.body.scrollTop;
+        } else {
+        x = e.pageX - myx;
+        y = e.pageY - myy;
+        }
+        //alert(x + " :: " + y);
+        if (width_array[currentCamera1] > 0) x = Math.round((x * 400) / width_array[currentCamera1]);
+        if (height_array[currentCamera1] > 0) y = Math.round((y * 300) / height_array[currentCamera1]);
+        //alert(x + " :: " + y);
+        if (myifr != null) myifr.src = "http://192.168.20.135:4040/ptz?src=" + currentCamera1 + "&moveto_x=" + x + "&moveto_y=" + y +"";
+        return true;
+}
+function getElPos1()
+{
+            el = document.images.webcam1;
+            x = el.offsetLeft;
+            y = el.offsetTop;
+            elp = el.offsetParent;
+            while(elp!=null)
+              { x+=elp.offsetLeft;
+                y+=elp.offsetTop;
+                elp=elp.offsetParent;
+              }
+            return new Array(x,y);
+}
+//-->
+</script>

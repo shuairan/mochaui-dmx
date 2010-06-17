@@ -1,0 +1,3 @@
+<?
+echo "NETIO FAKER";
+?>

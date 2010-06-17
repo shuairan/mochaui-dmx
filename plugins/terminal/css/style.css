@@ -1,0 +1,98 @@
+/* Terminal */
+
+#terminal_content {
+    height: 90%;
+}
+
+#terminalContent {
+    width: 100%;
+	height: 100%;
+}
+
+#terminalConsole {
+    width: 100%;
+	height: 100%;
+}
+
+/*
+#terminal_content {
+ height: 90%;
+}
+
+#terminalForm {
+    height: 100%;
+}
+
+#terminalForm #terminalConsole {
+    width: 100%;
+	height: 90%;
+}
+
+#terminalForm #terminalECMDcommand {
+    width: 100%;
+}
+
+#terminalForm .terminalFormField {
+    width: 100%;
+    height: 80%;
+}
+
+#terminal_content #terminalForm .formLabel {
+    white-space:nowrap;
+}
+
+#terminal_content #terminalForm .formField {
+    width: 75%;
+}
+
+#terminalForm .formLabel {
+	float: left;	
+	text-align: right;
+	width: 80px;
+	margin: 0 0 8px 0;
+	font-weight: bold;
+}
+
+#terminalForm .label {
+	font-size: 11px;
+	font-weight: bold;
+	padding-bottom: 2px;	
+}
+	
+#terminalForm .formField {
+	float: right;
+	padding: 0 0 0 0;
+	width: 230px;
+}
+
+#terminalSelectNetio {
+	float: left;
+}
+
+*/
+
+/* Window Builder Form Elements */
+/*
+#newWindowForm .form {
+	padding: 0 0 10px 10px;	
+}		
+
+#newWindowForm {
+	width: 320px;
+}
+
+#newWindowForm .input {
+	width: 225px;
+}
+
+#desktop textarea {
+	width: 225px;
+	height: 60px;
+}
+*/
+
+
+#newWindowForm form .number {
+	width: 40px;
+}
+

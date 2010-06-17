@@ -1,0 +1,13 @@
+<form id="netioForm" action="#" method="get">
+	<div class="formLabel">Name:</div>
+	<div class="formField"><input type="text" class="input" id="netioName" value="" maxlength="250" /></div>
+	<div class="clear"></div>
+
+	<div class="formLabel">URL:</div>
+	<div class="formField"><input type="text" class="input" id="netioURL" value="" maxlength="250" /></div>
+	<div class="clear"></div>
+
+	<div class="formLabel"></div>
+	<div class="formField"><input type="submit" class="submit" id="netioFormSubmit" value="Senden" /></div>
+	<div class="clear"></div>
+</form>

@@ -1,0 +1,3 @@
+<div id="netioList">No NetIOs configured!</div>
+<input type="submit" class="submit" id="netioListEdit" value="Bearbeiten" />
+<input type="submit" class="submit" id="netioListEdit" value="Löschen" />

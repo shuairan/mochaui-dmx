@@ -1,0 +1,39 @@
+#pageWrapper {
+	background: #999999;
+}
+
+.desktopIcon {
+	margin: 15px 0 0 15px;
+	cursor: pointer;
+}
+
+#netio_contentWrapper
+{
+    background:#303030;
+}
+
+#netioList table {
+    background:#404040;
+}
+
+#netioList th
+{
+    background: #3D3D4D;
+}
+
+#netioList .table-tr-odd
+{
+    background:#595959;
+}
+
+#netioList .table-tr-hovered
+{
+    background: #333333;
+    cursor:pointer;
+}
+
+#netioList #editorDIV
+{
+    text-align: right;
+    background: #333333;
+}
